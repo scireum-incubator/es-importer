@@ -70,6 +70,9 @@ public class BulkHelper {
                         currentBatch.reset();
                     }
                 }
+                if (batch.length() > 0) {
+                    importBatch(instance, batch.toString().getBytes());
+                }
             }
             return true;
         } catch (IOException e) {
